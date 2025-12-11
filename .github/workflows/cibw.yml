@@ -1,4 +1,4 @@
-name: Build windows wheels
+name: Build linux wheels
 
 on:
   push:
