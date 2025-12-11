@@ -2,7 +2,7 @@ name: Build linux wheels
 
 on:
   push:
-    branches: ["main", "ci"]
+    branches: ["main", "ci", "cibw"]
   pull_request:
   workflow_dispatch:
 
