@@ -34,11 +34,10 @@ jobs:
             apt install -y default-libmysqlclient-dev pkg-config
           CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9"
           CIBW_TEST_COMMAND: 'python -c "import MySQLdb; print(MySQLdb.version_info)" '
-      - name: Upload Wheel
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: cibw-wheels-${{ matrix.os }}-${{ strategy.job-index }}
-          path: dist/*.*
+          path: ./wheelhouse/*.whl
   build_sdist:
     name: Build source distribution
     runs-on: ubuntu-latest
