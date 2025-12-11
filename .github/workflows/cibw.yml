@@ -34,6 +34,8 @@ jobs:
             apt install -y default-libmysqlclient-dev pkg-config
           CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9"
           CIBW_TEST_COMMAND: 'python -c "import MySQLdb; print(MySQLdb.version_info)" '
+          CIBW_ENVIRONMENT: >-
+            PACKAGE_NAME=mysqlclient-binary-unofficial
       - uses: actions/upload-artifact@v4
         with:
           name: cibw-wheels-${{ matrix.os }}-${{ strategy.job-index }}
